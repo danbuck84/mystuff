@@ -1,6 +1,9 @@
 # Calculando a média em Python :: Análise e Desenvolvimento de Sistemas (UNIP - EAD)
 # Média = (7 x Prova) + (2 x PIM) + (1 x AVA) / 10
 
+# Autor :: Daniel Buck
+# Dezembro de 2019
+
 # Importando o "timer" pra dar um suspense extra ao aguardar pela média
 from time import sleep
 
@@ -26,9 +29,10 @@ while opt != 2:
     if opt == 1:
 
         # Inserção das notas para cálculo
-        ava = float(input('\nDigite a nota do AVA: '))
-        pim = float(input('Digite a nota do PIM: '))
+        materia = str(input('\nDigite o nome da matéria: '))
+        ava = float(input('Digite a nota do AVA: '))
         prova = float(input('Digite a nota da Prova: '))
+        pim = float(input('Digite a nota do PIM: '))
 
         # Calculando notas e médias
         prova *= 7
@@ -36,13 +40,11 @@ while opt != 2:
         media = (ava + prova + pim) / 10
         exame = 6 - media
 
-        # Mais suspense
         sleep(1)
 
         # Apresetação dos resultados
-        print(f'\nSua média foi de {media:.2f}!')
+        print(f'\nSua média em {materia} foi de {media:.2f}!')
 
-        # Muito suspense
         sleep(1)
 
         if media >= 6:
