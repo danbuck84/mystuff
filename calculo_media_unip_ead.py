@@ -1,21 +1,59 @@
-# Calculando a média :: Análise e Desenvolvimento de Sistemas (UNIP - EAD)
-# Média = 7 x Prova + 2 x PIM + 1 x AVA / 10
+# Calculando a média em Python :: Análise e Desenvolvimento de Sistemas (UNIP - EAD)
+# Média = (7 x Prova) + (2 x PIM) + (1 x AVA) / 10
 
+# Importando o "timer" pra dar um suspense extra ao aguardar pela média
+from time import sleep
+
+# Declarando "opção" para o menu e "média" para calcular posteriormente
+opt = 0
+media = 0
+
+# Instruções de uso
 print('Deve usar PONTO (.) em vez de VÍRGULA (,) ao informar os valores!')
 print('Exemplo: 5.5 (certo) :: 5,5 (errado)\n')
 
-ava = float(input('Digite a nota do AVA: '))
-media = 0
-pim = float(input('Digite a nota do PIM: '))
-prova = float(input('Digite a nota da Prova: '))
+# Suspense
+sleep(1)
 
-prova *= 7
-pim *= 2
-media = (ava + prova + pim) / 10
-exame = 6 - media
+# Início do loop 'while'
+while opt != 2:
 
-print(f'\nSua média foi de {media::.2f}!')
-if media >= 6:
-    print('Parabéns, você PASSOU!!!')
-else:
-    print(f'Você ficou de exame por {exame:.2f}.')
+    # Menu
+    print("\n[1] Calcular média\n[2] Encerrar programa")
+    opt = int(input(">>> "))
+
+    # Usando a opção de calcular média do menu
+    if opt == 1:
+
+        # Inserção das notas para cálculo
+        ava = float(input('\nDigite a nota do AVA: '))
+        pim = float(input('Digite a nota do PIM: '))
+        prova = float(input('Digite a nota da Prova: '))
+
+        # Calculando notas e médias
+        prova *= 7
+        pim *= 2
+        media = (ava + prova + pim) / 10
+        exame = 6 - media
+
+        # Mais suspense
+        sleep(1)
+
+        # Apresetação dos resultados
+        print(f'\nSua média foi de {media:.2f}!')
+
+        # Muito suspense
+        sleep(1)
+
+        if media >= 6:
+            print('Parabéns, você PASSOU!!!')
+        else:
+            print(f'Você ficou de exame por {exame:.2f}.')
+
+    # Usando a opção de encerrar o sistema do menu
+    elif opt == 2:
+        print("\nObrigado e volte sempre!")
+
+    # Mostrando uma mensagem de erro ao inserir uma opção inválida
+    else:
+        print("\nOpção inválida, tente novamente.")
