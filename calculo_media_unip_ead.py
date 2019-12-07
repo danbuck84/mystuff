@@ -40,11 +40,13 @@ while opt != 2:
         media = (ava + prova + pim) / 10
         exame = 6 - media
 
+        # Mais suspense
         sleep(1)
 
         # Apresetação dos resultados
         print(f'\nSua média em {materia} foi de {media:.2f}!')
 
+        # Muito suspense
         sleep(1)
 
         if media >= 6:
